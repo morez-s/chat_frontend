@@ -1,0 +1,35 @@
+.contact-box {
+  position: relative;
+  width: 300px;
+  padding: 10px;
+
+  .avatar {
+    width: 70px;
+    height: 70px;
+    border: solid 1px $primary-color;
+    border-radius: 50%;
+  }
+
+  .username {
+    position: absolute;
+    top: 33px;
+    right: 90px;
+    display: inline-block;
+    width: 200px;
+    font-size: 18px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .online-status {
+    position: absolute;
+    top: 65px;
+    right: 75px;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: $online-color;
+  }
+}
