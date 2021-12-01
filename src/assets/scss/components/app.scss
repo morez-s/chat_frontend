@@ -6,3 +6,9 @@
 * {
   font-family: iransans;
 }
+
+#root {
+  direction: rtl;
+  height: 100vh;
+  background-color: $background-color;
+}

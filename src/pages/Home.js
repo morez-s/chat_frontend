@@ -7,7 +7,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="home-container">
+    <div id="home-page">
       <h1 className="site-title">نرم افزار چت آنلاین</h1>
 
       <Button type="primary" shape="round" size="large" icon={<UserAddOutlined />} onClick={() => navigate("/registration")}>

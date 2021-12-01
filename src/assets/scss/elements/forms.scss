@@ -1,0 +1,28 @@
+.form {
+  margin: auto;
+  padding: 40px;
+
+  .form-title {
+    margin: 10px 0 30px;
+  }
+
+  .input {
+    margin: 10px 0;
+  }
+
+  input[type="password"] {
+    direction: ltr;
+  }
+
+  .button {
+    margin: 40px 0;
+  }
+
+  .span-link {
+    display: inline-block;
+    margin-bottom: 50px;
+    color: $highlight-color;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}

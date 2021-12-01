@@ -1,0 +1,14 @@
+#login-page {
+  text-align: center;
+  padding-top: 150px;
+
+  .form {
+    width: 400px;
+    border: solid 1px $primary-color;
+    border-radius: 10px;
+
+    .input {
+      text-align: center;
+    }
+  }
+}
