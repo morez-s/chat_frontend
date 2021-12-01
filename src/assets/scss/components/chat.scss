@@ -24,11 +24,31 @@
     width: 350px;
     height: calc( 100% - 100px);
     border-left: solid 3px $primary-color;
+    vertical-align: top;
+    overflow-y: auto;
+
+    .contact {
+      padding: 5px 0;
+      cursor: pointer;
+
+      .contact-box {
+        margin: auto;
+      }
+    }
+
+    .contact:hover {
+      background-color: $hover-color;
+    }
+
+    .contact.active {
+      background-color: $primary-color;
+    }
   }
 
   .chat-area {
     display: inline-block;
     width: calc( 100% - 350px );
     height: calc( 100% - 100px);
+    vertical-align: top;
   }
 }
