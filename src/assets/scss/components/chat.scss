@@ -50,5 +50,23 @@
     width: calc( 100% - 350px );
     height: calc( 100% - 100px);
     vertical-align: top;
+
+    .messages {
+      height: calc( 100% - 150px );
+      border-bottom: solid 3px $primary-color;
+      overflow-y: auto;
+    }
+
+    .input-container {
+      height: 150px;
+      text-align: center;
+
+      .input {
+        width: 70%;
+        height: 70px;
+        margin: 40px 20px;
+        border-radius: 10px;
+      }
+    }
   }
 }

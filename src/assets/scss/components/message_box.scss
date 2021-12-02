@@ -1,0 +1,44 @@
+.message-row {
+  .message-box {
+    display: inline-block;
+    max-width: 60%;
+    margin: 10px 30px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+
+    .body {
+      text-align: justify !important;
+    }
+
+    .footer {
+      direction: ltr;
+      padding: 10px 20px 0;
+      font-size: 13px;
+    }
+  }
+}
+
+.message-row.sent {
+  text-align: right;
+
+  .message-box {
+    background-color: #96beff;
+
+    .footer {
+      text-align: left;
+    }
+  }
+}
+
+.message-row.received {
+  text-align: left;
+
+  .message-box {
+    background-color: #69db69;
+
+    .footer {
+      text-align: right;
+    }
+  }
+}
