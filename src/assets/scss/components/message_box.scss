@@ -23,7 +23,7 @@
   text-align: right;
 
   .message-box {
-    background-color: #96beff;
+    background-color: $sent-message-color;
 
     .footer {
       text-align: left;
@@ -35,7 +35,7 @@
   text-align: left;
 
   .message-box {
-    background-color: #69db69;
+    background-color: $received-message-color;
 
     .footer {
       text-align: right;
