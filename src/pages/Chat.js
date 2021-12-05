@@ -10,6 +10,7 @@ const Chat = () => {
   const [users, setUsers] = useState([]);
   const [selectedUser, setSelectedUser] = useState({});
   const [messages, setMessages] = useState([]);
+  const [text, setText] = useState("");
 
   useEffect(() => {
     axiosInstance.get('/chat/users')
@@ -23,9 +24,11 @@ const Chat = () => {
 
   const handleClick = (index) => {
     const selectedUser = users[index];
-
     setSelectedUser(selectedUser);
+    getUserMessages(selectedUser);
+  };
 
+  const getUserMessages = (selectedUser) => {
     axiosInstance.get('/chat/users/' + selectedUser._id + '/messages')
       .then((res) => {
         setMessages(res.data);
@@ -33,13 +36,28 @@ const Chat = () => {
       .catch((err) => {
         console.log(err);
       });
-  }
+  };
+
+  const sendMessage = async() => {
+    await axiosInstance.post('/chat/users/' + selectedUser._id + '/messages', {
+      params: {
+        text
+      }
+    })
+      .then((res) => {
+        getUserMessages(selectedUser);
+        setText('');
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div id="chat-page">
       <Header />
       <ContactsList users={users} selectedUser={selectedUser} onClick={(index) => handleClick(index)} />
-      <ChatArea selectedUser={selectedUser} messages={messages} />
+      <ChatArea selectedUser={selectedUser} messages={messages} sendMessage={() => sendMessage()} text={text} setText={(t) => setText(t)} />
     </div>
   );
 };
