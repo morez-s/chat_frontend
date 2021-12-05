@@ -1,18 +1,11 @@
 import ContactBox from './../components/ContactBox.js';
 
-const ContactsList = () => {
+const ContactsList = (props) => {
   return (
     <div className="contacts-list">
-      <div className="contact">
-        <ContactBox />
-      </div>
-      <div className="contact">
-        <ContactBox />
-      </div>
+      {props.users.map((user) => <div className="contact"><ContactBox key={user._source.id} user={user} /></div>)}
+
       <div className="contact active">
-        <ContactBox />
-      </div>
-      <div className="contact">
         <ContactBox />
       </div>
     </div>
