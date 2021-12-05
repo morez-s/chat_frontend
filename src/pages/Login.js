@@ -41,7 +41,7 @@ const Login = () => {
         <Input className="input" size="large" addonBefore="نام کاربری" value={username} onChange={(e) => setUsername(e.target.value)} />
         <Input className="input" type="password" size="large" addonBefore="رمز عبور" value={password} onChange={(e) => setPassword(e.target.value)} />
 
-        <Button className="button" type="primary" shape="round" size="large" icon={<LoginOutlined />} onClick={login}>
+        <Button className="button" type="primary" shape="round" size="large" icon={<LoginOutlined />} onClick={() => login()}>
           ورود
         </Button>
 

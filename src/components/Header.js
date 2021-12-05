@@ -24,7 +24,7 @@ const Header = () => {
     <div className="header">
       <ContactBox />
 
-      <Button className="logout-button" type="primary" shape="round" size="large" icon={<LogoutOutlined />} onClick={logout}>
+      <Button className="logout-button" type="primary" shape="round" size="large" icon={<LogoutOutlined />} onClick={() => logout()}>
         خروج
       </Button>
     </div>

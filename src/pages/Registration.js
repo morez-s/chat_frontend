@@ -44,7 +44,7 @@ const Registration = () => {
         <Input className="input" type="password" size="large" addonBefore="رمز عبور" value={password} onChange={(e) => setPassword(e.target.value)} />
         <Input className="input" type="password" size="large" addonBefore="تکرار رمز عبور" value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)} />
 
-        <Button className="button" type="primary" shape="round" size="large" icon={<UserAddOutlined />} onClick={register}>
+        <Button className="button" type="primary" shape="round" size="large" icon={<UserAddOutlined />} onClick={() => register()}>
           ثبت نام
         </Button>
 
