@@ -2,14 +2,11 @@ import MessageBox from './MessageBox.js';
 import { Button, Input } from 'antd';
 import { ArrowLeftOutlined } from '@ant-design/icons';
 
-const ChatArea = () => {
+const ChatArea = (props) => {
   return (
     <div className="chat-area">
       <div className="messages">
-        <MessageBox side="sent" />
-        <MessageBox side="sent" />
-        <MessageBox side="received" />
-        <MessageBox side="sent" />
+        {props.messages.map((message) => <MessageBox key={message._id} side={message._source.receiver_user_id == props.selectedUser._id ? 'sent' : 'received'} message={message} />)}
       </div>
 
       <div className="input-container">

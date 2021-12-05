@@ -8,6 +8,8 @@ import { useState, useEffect } from "react";
 
 const Chat = () => {
   const [users, setUsers] = useState([]);
+  const [selectedUser, setSelectedUser] = useState({});
+  const [messages, setMessages] = useState([]);
 
   useEffect(() => {
     axiosInstance.get('/chat/users')
@@ -19,11 +21,25 @@ const Chat = () => {
       });
   }, []);
 
+  const handleClick = (index) => {
+    const selectedUser = users[index];
+
+    setSelectedUser(selectedUser);
+
+    axiosInstance.get('/chat/users/' + selectedUser._id + '/messages')
+      .then((res) => {
+        setMessages(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
   return (
     <div id="chat-page">
       <Header />
-      <ContactsList users={users} />
-      <ChatArea />
+      <ContactsList users={users} selectedUser={selectedUser} onClick={(index) => handleClick(index)} />
+      <ChatArea selectedUser={selectedUser} messages={messages} />
     </div>
   );
 };
