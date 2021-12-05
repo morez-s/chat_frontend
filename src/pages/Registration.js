@@ -20,7 +20,7 @@ const Registration = () => {
 
         <br />
 
-        <span className="span-link" onClick={() => navigate("/login")}>
+        <span className="span-link" onClick={() => navigate('/login')}>
           قبلا در سایت ثبت نام کرده‌ام!
         </span>
       </div>

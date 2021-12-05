@@ -21,9 +21,9 @@ const Login = () => {
     })
       .then((res) => {
         const userToken = res.data.token;
-        axiosInstance.defaults.headers.common['Authorization'] = 'Bearer ' + userToken;
+        axiosInstance.defaults.headers.common['authorization'] = 'Bearer ' + userToken;
         localStorage.setItem('userToken', userToken)
-        navigate("/chat")
+        navigate('/chat')
       })
       .catch((err) => {
         notification.open({
@@ -47,7 +47,7 @@ const Login = () => {
 
         <br />
 
-        <span className="span-link" onClick={() => navigate("/registration")}>
+        <span className="span-link" onClick={() => navigate('/registration')}>
           هنوز در سایت ثبت نام نکرده‌ام!
         </span>
       </div>
