@@ -24,11 +24,9 @@ const Chat = () => {
 
   const handleClick = (index) => {
     const selectedUser = users[index];
-    setSelectedUser(selectedUser);
-    getUserMessages(selectedUser);
-  };
 
-  const getUserMessages = (selectedUser) => {
+    setSelectedUser(selectedUser);
+
     axiosInstance.get('/chat/users/' + selectedUser._id + '/messages')
       .then((res) => {
         setMessages(res.data);
@@ -38,14 +36,14 @@ const Chat = () => {
       });
   };
 
-  const sendMessage = async() => {
-    await axiosInstance.post('/chat/users/' + selectedUser._id + '/messages', {
+  const sendMessage = () => {
+    axiosInstance.post('/chat/users/' + selectedUser._id + '/messages', {
       params: {
         text
       }
     })
       .then((res) => {
-        getUserMessages(selectedUser);
+        console.log(res);
         setText('');
       })
       .catch((err) => {
