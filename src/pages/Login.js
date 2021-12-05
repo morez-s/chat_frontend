@@ -38,8 +38,8 @@ const Login = () => {
       <div className="form">
         <h1 className="form-title">ورود به سایت</h1>
         
-        <Input className="input" size="large" addonBefore="نام کاربری" value={username} onChange={(e) => setUsername(e.target.value)} />
-        <Input className="input" type="password" size="large" addonBefore="رمز عبور" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <Input className="input" size="large" addonBefore="نام کاربری" value={username} onChange={(e) => setUsername(e.target.value)} onKeyPress={e => e.key === 'Enter' && login()} />
+        <Input className="input" type="password" size="large" addonBefore="رمز عبور" value={password} onChange={(e) => setPassword(e.target.value)} onKeyPress={e => e.key === 'Enter' && login()} />
 
         <Button className="button" type="primary" shape="round" size="large" icon={<LoginOutlined />} onClick={() => login()}>
           ورود

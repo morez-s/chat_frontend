@@ -40,9 +40,9 @@ const Registration = () => {
       <div className="form">
         <h1 className="form-title">ثبت نام در سایت</h1>
         
-        <Input className="input" size="large" addonBefore="نام کاربری" value={username} onChange={(e) => setUsername(e.target.value)} />
-        <Input className="input" type="password" size="large" addonBefore="رمز عبور" value={password} onChange={(e) => setPassword(e.target.value)} />
-        <Input className="input" type="password" size="large" addonBefore="تکرار رمز عبور" value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)} />
+        <Input className="input" size="large" addonBefore="نام کاربری" value={username} onChange={(e) => setUsername(e.target.value)} onKeyPress={e => e.key === 'Enter' && register()} />
+        <Input className="input" type="password" size="large" addonBefore="رمز عبور" value={password} onChange={(e) => setPassword(e.target.value)} onKeyPress={e => e.key === 'Enter' && register()} />
+        <Input className="input" type="password" size="large" addonBefore="تکرار رمز عبور" value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)} onKeyPress={e => e.key === 'Enter' && register()} />
 
         <Button className="button" type="primary" shape="round" size="large" icon={<UserAddOutlined />} onClick={() => register()}>
           ثبت نام

@@ -10,7 +10,7 @@ const ChatArea = (props) => {
       </div>
 
       <div className="input-container">
-        <Input className="input" size="large" onKeyPress={e => e.key === 'Enter' && alert('send')} value={props.text} onChange={(e) => props.setText(e.target.value)} />
+        <Input className="input" size="large" onKeyPress={e => e.key === 'Enter' && props.sendMessage()} value={props.text} onChange={(e) => props.setText(e.target.value)} />
 
         <Button className="button" type="primary" shape="round" size="large" icon={<ArrowLeftOutlined />} onClick={() => props.sendMessage()}>
           ارسال
