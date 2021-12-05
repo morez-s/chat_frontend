@@ -5,6 +5,12 @@ import './index.css';
 import './assets/scss/index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import axiosInstance from './axios';
+
+const userToken = localStorage.getItem('userToken');
+if (userToken) {
+  axiosInstance.defaults.headers.common['authorization'] = 'Bearer ' + userToken;
+}
 
 ReactDOM.render(
   <React.StrictMode>
